@@ -1,0 +1,9 @@
+def solution(n):
+    answer = 0
+
+    while n > 0:
+        dight = n % 10
+        answer += dight
+        n //= 10
+
+    return answer
