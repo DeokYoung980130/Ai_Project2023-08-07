@@ -1,0 +1,10 @@
+def solution(arr, divisor):
+    divisible_elements = [x for x in arr if x % divisor == 0]
+    if len(divisible_elements) == 0:
+        return [-1]
+    else:
+        return sorted(divisible_elements)
+
+arr = [5, 9, 7, 10]
+divisor = 5
+print(solution(arr, divisor))
