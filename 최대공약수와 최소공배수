@@ -1,0 +1,16 @@
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+def solution(n, m):
+    greatest_common_divisor = gcd(n, m)
+    least_common_multiple = lcm(n, m)
+    
+    answer = [greatest_common_divisor, least_common_multiple]
+    return answer
+
+print(solution(3, 12))  # 출력: [3, 12]
