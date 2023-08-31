@@ -1,0 +1,11 @@
+def solution(n):
+    ternary_reversed = ""
+    while n > 0:
+        n, remainder = divmod(n, 3)
+        ternary_reversed += str(remainder)
+
+    decimal_value = int(ternary_reversed, 3)
+    
+    return decimal_value
+
+print(solution(45))
