@@ -1,0 +1,20 @@
+def calculate_number(s):
+    return int(s)
+
+def solution(t, p):
+    p_value = calculate_number(p)
+    count = 0
+
+    for i in range(len(t) - len(p) + 1):
+        substring = t[i:i + len(p)]
+        substring_value = calculate_number(substring)
+        if substring_value <= p_value:
+            count += 1
+    
+    return count
+
+# 예시 입력과 출력
+t_string = "3141592"
+p_string = "271"
+result = solution(t_string, p_string)
+print(result)
