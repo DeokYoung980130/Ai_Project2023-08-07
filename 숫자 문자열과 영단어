@@ -1,0 +1,37 @@
+def solution(s):
+    words_dict = {
+        "zero": "0",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7",
+        "eight": "8",
+        "nine": "9"
+    }
+    
+    answer = ""
+    current_word = ""
+    
+    for char in s:
+        if char.isnumeric():
+            answer += char
+        else:
+            current_word += char
+            if current_word in words_dict:
+                answer += words_dict[current_word]
+                current_word = ""
+    
+    return int(answer)
+
+# 테스트 입력
+s1 = "one4seveneight"
+s2 = "23four5six7"
+s3 = "1zerotwozero3"
+
+# 결과 출력
+print(solution(s1))  # 출력: 1478
+print(solution(s2))  # 출력: 234567
+print(solution(s3))  # 출력: 10203
