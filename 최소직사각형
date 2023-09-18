@@ -1,0 +1,16 @@
+def solution(sizes):
+    max_width = 0
+    max_height = 0
+
+    for w, h in sizes:
+        max_width = max(max_width, max(w, h))
+        max_height = max(max_height, min(w, h))
+
+    wallet_size = max_width * max_height
+
+    return wallet_size
+
+# 테스트 입력
+sizes = [[60, 50], [30, 70], [60, 30], [80, 40]]
+# 결과 출력
+print(solution(sizes))  # 출력: 4000
