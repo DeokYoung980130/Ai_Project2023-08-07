@@ -1,0 +1,18 @@
+def solution(s, n):
+    result = []
+
+    for char in s:
+        if char.isalpha():  # 알파벳인 경우만 처리
+            start = ord('a') if char.islower() else ord('A')
+            shifted_char = chr((ord(char) - start + n) % 26 + start)
+            result.append(shifted_char)
+        else:
+            result.append(char)  # 공백 등 알파벳이 아닌 경우 그대로 추가
+
+    return ''.join(result)
+
+# 테스트 입력
+s = "AB"
+n = 1
+# 결과 출력
+print(solution(s, n))  # 출력: "BC"
