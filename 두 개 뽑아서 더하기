@@ -1,0 +1,20 @@
+def solution(numbers):
+    # 가능한 모든 두 수의 합을 저장할 집합(set)을 생성합니다.
+    result_set = set()
+    
+    # 이중 반복문을 사용하여 모든 두 수의 합을 구합니다.
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            result_set.add(numbers[i] + numbers[j])
+    
+    # 결과를 정렬한 후 리스트로 변환하여 반환합니다.
+    result = sorted(list(result_set))
+    
+    return result
+
+# 예시 입력
+numbers = [2, 1, 3, 4, 1]
+
+# 함수 호출 및 결과 출력
+result = solution(numbers)
+print(result)  # [2, 3, 4, 5, 6, 7]
