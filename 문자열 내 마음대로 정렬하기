@@ -1,0 +1,20 @@
+def solution(strings, n):
+    # 주어진 조건에 맞게 정렬 함수를 작성
+    def custom_sort(s):
+        return (s[n], s)
+    
+    # 정렬 함수를 사용하여 strings를 정렬하고 반환
+    return sorted(strings, key=custom_sort)
+
+# 예시 입력
+strings1 = ["sun", "bed", "car"]
+n1 = 1
+strings2 = ["abce", "abcd", "cdx"]
+n2 = 2
+
+# 함수 호출 및 결과 출력
+result1 = solution(strings1, n1)
+result2 = solution(strings2, n2)
+
+print(result1)  # ["car", "bed", "sun"]
+print(result2)  # ["abcd", "abce", "cdx"]
