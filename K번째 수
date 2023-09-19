@@ -1,0 +1,11 @@
+def solution(array, commands):
+    result = []
+    
+    for command in commands:
+        i, j, k = command
+        # 배열을 i부터 j까지 자르고 정렬합니다.
+        sliced_array = sorted(array[i-1:j])
+        # k번째 숫자를 결과에 추가합니다.
+        result.append(sliced_array[k-1])
+    
+    return result
