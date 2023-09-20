@@ -1,0 +1,18 @@
+def solution(s):
+    result = []
+    char_indices = {}
+    n = len(s)
+    
+    for i in range(n):
+        char = s[i]
+        if char in char_indices:
+            result.append(i - char_indices[char])
+        else:
+            result.append(-1)
+        char_indices[char] = i
+    
+    return result
+
+# 예제
+s = "banana"
+print(solution(s))  # 출력: [-1, -1, -1, 2, 2, 2]
