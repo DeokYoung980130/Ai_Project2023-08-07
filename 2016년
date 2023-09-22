@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+char* solution(int a, int b) {
+    char* days[] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+    int days_in_month[] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int total_days = 0;
+
+    // 각 월의 일 수를 더하여 총 일 수 계산
+    for (int i = 1; i < a; i++) {
+        total_days += days_in_month[i];
+    }
+
+    // 해당 월의 날짜를 더하여 총 일 수 계산
+    total_days += b;
+
+    // 2016년 1월 1일이 금요일이므로, 금요일(4)부터 시작하여 요일을 계산
+    int day_of_week = (4 + total_days) % 7;
+
+    return days[day_of_week];
+}
+
+int main() {
+    int a = 5;
+    int b = 24;
+
+    char* result = solution(a, b);
+    printf("%d월 %d일은 %s입니다.\n", a, b, result);
+
+    return 0;
+}
