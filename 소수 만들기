@@ -1,0 +1,28 @@
+from itertools import combinations
+
+# 소수 판별 함수
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# 3개의 숫자 조합을 생성하는 함수
+def get_combinations(nums):
+    return list(combinations(nums, 3))
+
+def solution(nums):
+    combinations = get_combinations(nums)
+    count = 0
+    
+    for comb in combinations:
+        if is_prime(sum(comb)):
+            count += 1
+    
+    return count
+
+# 테스트 예제
+print(solution([1, 2, 3, 4]))  # 1
+print(solution([1, 2, 7, 6, 4]))  # 4
